@@ -15,3 +15,15 @@ def signup():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
+your_project_name/
+│
+├── app.py
+├── templates/
+│   ├── index.html
+│   ├── signup.html
+│   └── upload.html
+└── static/
+    └── styles.css
