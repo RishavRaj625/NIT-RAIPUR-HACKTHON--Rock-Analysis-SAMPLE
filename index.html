@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Analysis Dashboard</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Rock Sample Analysis</h1>
+        <p>Analyze, classify, and compare mineral compositions with visual insights.</p>
+    </header>
+    
+    <main>
+        <!-- Existing Chart Section -->
+        <section class="charts">
+            <div class="chart-container">
+                <canvas id="mineralPieChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="grainHistogram"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="compositionScatterPlot"></canvas>
+            </div>
+        </section>
+
+        <!-- Key Metrics Section -->
+        <section class="metrics">
+            <h2>Key Metrics</h2>
+            <ul>
+                <li>Total Mineral Composition: <span id="compositionPercent">80%</span></li>
+                <li>Number of Grains Identified: <span id="grainCount">120</span></li>
+                <li>Volume Distribution: <span id="volumeDist">70%</span></li>
+            </ul>
+        </section>
+        
+        <!-- New Mineral Details Section -->
+        <section class="mineral-details">
+            <h2>Mineral Details</h2>
+            <div class="card-container">
+                <div class="mineral-card">
+                    <h3>Quartz</h3>
+                    <p>Composition: SiO₂</p>
+                    <p>Volume: 40%</p>
+                </div>
+                <div class="mineral-card">
+                    <h3>Feldspar</h3>
+                    <p>Composition: KAlSi₃O₈ - NaAlSi₃O₈ - CaAl₂Si₂O₈</p>
+                    <p>Volume: 30%</p>
+                </div>
+                <div class="mineral-card">
+                    <h3>Mica</h3>
+                    <p>Composition: K(Mg,Fe)₃(AlSi₃O₁₀)(OH)₂</p>
+                    <p>Volume: 20%</p>
+                </div>
+                <div class="mineral-card">
+                    <h3>Others</h3>
+                    <p>Composition: Various</p>
+                    <p>Volume: 10%</p>
+                </div>
+            </div>
+        </section>
+        
+        <button onclick="downloadReport()">Download Report (PDF/CSV)</button>
+    </main>
+
+    <!-- <script src="{{ url_for('static', filename='script.js') }}"></script> -->
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='js/Script.js') }}"
+      defer
+    ></script>
+</body>
+</html>
